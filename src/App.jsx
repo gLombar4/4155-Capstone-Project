@@ -3,8 +3,10 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Browser from './Browser.jsx'
 
-function App() {
+function Home() {
   const [count, setCount] = useState(0)
 
   return (
@@ -41,10 +43,7 @@ function App() {
           <p>Your questions, answered</p>
           <ul>
             <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
+              <Link to="/Browser">Browser</Link>
             </li>
             <li>
               <a href="https://react.dev/" target="_blank">
@@ -116,6 +115,17 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Browser" element={<Browser />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
