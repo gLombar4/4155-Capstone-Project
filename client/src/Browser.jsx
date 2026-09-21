@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import {useEffect} from 'react'
 import "./Browser.css"
+import fallbackCover from './assets/ncf.png'
 // import env from "react-dotenv"
 
 function Browser() {
@@ -28,7 +29,7 @@ function Browser() {
           headers: {
             "Accept": "application/json",
           },
-          body: `fields game,url; where game = (${gameIds.join(",")});`,
+          body: `fields game,url,height,width; where game = (${gameIds.join(",")});`,
         });
       })
       .then((response) => response?.json())
@@ -50,8 +51,14 @@ function Browser() {
                     {games.map((game) => (
                         <li key={game.id}>{game.name}
                       <img
-                        src={covers.find((cover) => cover.game === game.id)?.url?.replace(/^\/\//, "https://")}
+                        src={covers.find((cover) => cover.game === game.id)?.url?.replace(/^\/\//, "https://").replace(/t_thumb/, "t_cover_big") || fallbackCover}
+                        onError={(event) => {
+                          event.currentTarget.onerror = null;
+                          event.currentTarget.src = fallbackCover;
+                        }}
                         alt={`${game.name} Cover`}
+                        height = "250"
+                        width = "200"
                       />
                         </li>
                     ))}

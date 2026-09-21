@@ -1,5 +1,10 @@
 li {
-    list-style-type: none;
+    float:left;
     padding: 1rem;
-    display: inline-block;
+    list-style: none;
+    color: var(--text-h);
+}
+li img{
+    display:block;
+    margin:0 auto;
 }
