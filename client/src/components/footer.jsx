@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer clasName="site-footer">
+        <footer className="site-footer">
             <p>&copy; 2026 Capstone Project</p>
         </footer>
     );
