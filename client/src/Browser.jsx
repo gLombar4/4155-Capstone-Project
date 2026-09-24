@@ -3,8 +3,7 @@ import {useEffect} from 'react'
 import "./Browser.css"
 import fallbackCover from './assets/ncf.png'
 import Searchbar from './components/Searchbar.jsx'
-// import env from "react-dotenv"
-
+import {Link} from "react-router-dom"
 const PAGE_SIZE = 20;
 
 function Browser() {
@@ -103,6 +102,7 @@ function Browser() {
 
 
 
+
     return (
         <div className="browser">
             <div className="browser-header">
@@ -127,9 +127,7 @@ function Browser() {
                         width = "200"
                       />
                       {/* Add a link to a seperate page, detailing the game & getting its details */}
-                        <a href = {game.url}>
-                          View Details
-                        </a>
+                      <Link to={`/GamePage/${game.id}`}>View More</Link>
                       </li>
                     ))}
                 </ul>

@@ -7,6 +7,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import './App.css'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Browser from './Browser.jsx'
+import { GamePage } from './components/GamePage.jsx';
 
 function Home() {
   const logoColor = "#79d8d4";
@@ -80,6 +81,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Browser" element={<Browser />} />
+        <Route path="/GamePage/:game_id" element={<GamePage/>}/>
       </Routes>
     </BrowserRouter>
   )
