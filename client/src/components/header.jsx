@@ -1,12 +1,13 @@
 function Header() {
     return (
         <header className="site-header">
-            <h1>Capstone Project</h1>
+            <h1>Gameboxd</h1>
 
             <nav>
                 <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/login">Login</a>
+                <a href="/browser">Browser</a>
+                <a href="#">Login</a>
+                <a href="#">Sign Up</a>
             </nav>
         </header>
     );
