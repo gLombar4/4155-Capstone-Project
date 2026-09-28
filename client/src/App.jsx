@@ -9,11 +9,14 @@ import { CiLogin, CiStar } from "react-icons/ci";
 import { FaUserPlus } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import './App.css'
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 function App() {
   const logoColor = "#79d8d4";
   return (
     <>
+    <Header />
       <section id="center">
         <div className="hero">
           <img src={logo} className="base" width="170" height="179" alt="" />
@@ -72,6 +75,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+      <Footer />
     </>
   )
 }

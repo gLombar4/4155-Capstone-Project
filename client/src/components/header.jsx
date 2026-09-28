@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header className="site-header">
-            <h1>Capstone Project</h1>
+            <h1>Gameboxd</h1>
 
             <nav>
                 <a href="/">Home</a>
