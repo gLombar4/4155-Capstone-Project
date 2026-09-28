@@ -1,0 +1,4 @@
+.rating-stars .MuiRating-icon svg {
+	stroke: lightgrey;
+	stroke-width: 0.5px;
+}

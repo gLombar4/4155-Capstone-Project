@@ -1,7 +1,3 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import logo from './assets/logo.png'
 import { IoLogoGameControllerA } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
@@ -9,8 +5,11 @@ import { CiLogin, CiStar } from "react-icons/ci";
 import { FaUserPlus } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import './App.css'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Browser from './Browser.jsx'
+import { GamePage } from './components/GamePage.jsx';
 
-function App() {
+function Home() {
   const logoColor = "#79d8d4";
   return (
     <>
@@ -33,11 +32,11 @@ function App() {
           <p>Track, review, and recommend your favorite games</p>
           <ul>
             <li>
-              {/* TODO: Link search button to */}
-              <a href="" target="_blank">
-                <FaMagnifyingGlass />
+              <Link to="/Browser">
+              <FaMagnifyingGlass />
                 Search for games
-              </a>
+                </Link>
+                
             </li>
             <li>
               <a href="https://react.dev/" target="_blank">
@@ -73,6 +72,18 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Browser" element={<Browser />} />
+        <Route path="/GamePage/:game_id" element={<GamePage/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
