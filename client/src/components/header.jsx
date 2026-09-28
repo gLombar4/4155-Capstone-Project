@@ -5,8 +5,9 @@ function Header() {
 
             <nav>
                 <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/login">Login</a>
+                <a href="/browser">Browser</a>
+                <a href="#">Login</a>
+                <a href="#">Sign Up</a>
             </nav>
         </header>
     );
