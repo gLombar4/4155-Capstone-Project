@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from "react-router-dom"
 import fallbackCover from '../assets/ncf.png'
 import BasicRating from './Rating';
+import './GamePage.css';
 
 export const GamePage = () => {
     const {game_id} = useParams();
@@ -45,7 +46,7 @@ export const GamePage = () => {
     }
 
     return(
-        <main>
+        <main className="game-page">
         <Link to="/Browser">Back to games </Link>
         <h1>{game.name}</h1>
         <img
