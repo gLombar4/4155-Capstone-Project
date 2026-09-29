@@ -8,7 +8,7 @@ export default function BasicRating() {
   const [value, setValue] = React.useState(3);
 
   return (
-    <Box sx={{ '& > legend': { mt: 2 } }}>
+    <Box className="rating">
       <Typography component="legend">Rate this title</Typography>
       <Rating
         className="rating-stars"

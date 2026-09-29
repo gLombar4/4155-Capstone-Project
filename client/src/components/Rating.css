@@ -1,4 +1,32 @@
-.rating-stars .MuiRating-icon svg {
-	stroke: lightgrey;
-	stroke-width: 0.5px;
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  width: fit-content;
+}
+
+.rating legend.MuiTypography-root {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+.rating-stars .MuiRating-iconFilled {
+  color: var(--color-star);
+}
+
+.rating-stars .MuiRating-iconEmpty {
+  color: var(--color-border-strong);
+}
+
+@media (max-width: 1024px) {
+  .rating {
+    justify-self: center;
+    align-items: center;
+  }
 }
