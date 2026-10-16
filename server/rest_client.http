@@ -1,0 +1,20 @@
+//For API Testing purposes
+@BASE_URL = http://localhost:3000
+
+GET {{BASE_URL}}
+###
+
+
+GET {{BASE_URL}}/users
+###
+
+
+POST {{BASE_URL}}/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "user_name": "Test User 1",
+    "user_password": "password"
+}
+###
