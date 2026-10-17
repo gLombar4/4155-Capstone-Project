@@ -1,8 +1,8 @@
 import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
-// import supabase from './supabaseClient.js';
-import userRoutes from './routes/userRoutes.js'
+import userRoutes from './routes/userRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
 
 const app = express();
 
@@ -22,6 +22,7 @@ app.get("/", (req,res) =>{
 })
 
 app.use('/users', userRoutes);
+app.use('/reviews', reviewRoutes);
 
 
 const PORT = process.env.PORT || 3000;
