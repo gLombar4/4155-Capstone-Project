@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
+import userRoutes from './routes/userRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
 
 const app = express();
 
@@ -14,6 +16,14 @@ app.use(express.json());
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
+
+app.get("/", (req,res) =>{
+  res.json({"message": "Hello world"});
+})
+
+app.use('/users', userRoutes);
+app.use('/reviews', reviewRoutes);
+
 
 const PORT = process.env.PORT || 3000;
 
