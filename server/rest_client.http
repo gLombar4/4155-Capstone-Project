@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 ###
 
-PUT {{BASE_URL}}/users/4
+PUT {{BASE_URL}}/users/8
 Content-Type: application/json
 
 {
@@ -29,7 +29,25 @@ Content-Type: application/json
 }
 ###
 
-DELETE {{BASE_URL}}/users/6
+DELETE {{BASE_URL}}/users/7
+###
+
+POST {{BASE_URL}}/auth/signup
+Content-Type: application/json
+
+{
+    "user_name": "Signup Test",
+    "user_password": "Signup pw"
+}
+###
+
+POST {{BASE_URL}}/auth/login
+Content-Type: application/json
+
+{
+    "user_name": "decafcoffeee",
+    "user_password": "TestUser2"
+}
 ###
 
 GET {{BASE_URL}}/reviews

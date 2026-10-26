@@ -13,7 +13,7 @@ export async function getUserById(id) {
         .from("Users")
         .select()
         .eq('user_id', id)
-    if (error) console.log(error);
+    if (error) throw error;
     return data
     
 };
@@ -23,7 +23,7 @@ export async function getUserByName(name){
         .from("Users")
         .select("user_name")
         .eq('user_name', name)
-    if (error) console.log(error);
+    if (error) throw error;
     return data;
 }
 

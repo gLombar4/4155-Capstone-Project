@@ -5,7 +5,13 @@ export async function getAllUsers() {
 }
 
 export async function getUserById(id) {
-  return await userRepo.getUserById(id);
+  const user = await userRepo.getUserById(id);
+  if(user?.length == 0){
+    const err = new Error(`Cannot find user with id: ${id}`);
+    err.status = 404;
+    throw err;
+  }
+  return user;
 }
 
 export async function createUser(data) {
@@ -28,7 +34,7 @@ export async function createUser(data) {
 export async function updateUser(id, data) {
   const user = await userRepo.getUserById(id);
   if (user?.length == 0) {
-    const err = new Error(`Cannot find user with id ${id}`);
+    const err = new Error(`Cannot find user with id: ${id}`);
     err.status = 404;
     throw err;
   }
