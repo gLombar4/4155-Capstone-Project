@@ -17,3 +17,24 @@ export async function getUserByIdHandler(req, res) {
         res.status(error.status || 500).json({ "error": "Uh Oh" });
     }
 }
+
+export async function createUserHandler(req, res) {
+  try {
+    const newUser = await userServices.createUser(req.body);
+    res.status(201).json(newUser);
+  } catch (error) {
+    res.status(error.status || 500).json({ error: error.message });
+  }
+}
+
+export async function updateUserHandler(req, res) {
+  try {
+    const updatedUser = await userServices.updateUser(
+      Number(req.params.id),
+      req.body,
+    );
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(error.status || 500).json({ error: error.message });
+  }
+}

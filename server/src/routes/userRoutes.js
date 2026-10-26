@@ -14,17 +14,17 @@ router.get(
     userController.getUserByIdHandler
 );
 
-// router.post(
-//     '/',
-//     userController.createUserHandler
-// );
+router.post(
+    '/',
+    userController.createUserHandler
+);
 
-// router.put(
-//     '/:id',
-//     userController.updateUserHandler
-// );
+router.put(
+    '/:id',
+    userController.updateUserHandler
+);
 
-// router.put(
+// router.delete(
 //     '/:id',
 //     userController.deleteUserHandler
 // );
