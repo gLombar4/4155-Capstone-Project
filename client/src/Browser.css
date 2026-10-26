@@ -1,30 +1,95 @@
-#game-list ul {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+.browser {
+  padding: var(--space-5) var(--space-6) var(--space-7);
 }
 
+.browser-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.browser-header h1 {
+  margin: 0;
+}
+
+#search-bar input {
+  width: 280px;
+  max-width: 100%;
+}
+
+#game-list ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The game name is a bare text node, so `order` on the img moves the cover above it. */
 #game-list li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    list-style: none;
-    color: var(--text-h);
-    border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2) var(--space-3);
+  text-align: left;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-strong);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+#game-list li:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 #game-list li img {
-    display: block;
-    width: min(200px, 100%);
-    height: auto;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
+  order: -1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-raised);
 }
 
-#search-bar {
-    margin-bottom:1rem;
-    margin-right:100rem;
+#game-list li a {
+  margin-top: auto;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+#game-list > button {
+  display: block;
+  margin: var(--space-6) auto 0;
+}
+
+@media (max-width: 1024px) {
+  .browser {
+    padding: var(--space-4);
+  }
+
+  .browser-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  #search-bar input {
+    width: 100%;
+  }
+
+  #game-list ul {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-4);
+  }
 }
