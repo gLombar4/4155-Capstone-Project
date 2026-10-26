@@ -29,6 +29,9 @@ Content-Type: application/json
 }
 ###
 
+DELETE {{BASE_URL}}/users/6
+###
+
 GET {{BASE_URL}}/reviews
 ###
 

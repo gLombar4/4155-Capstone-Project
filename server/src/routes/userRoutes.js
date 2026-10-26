@@ -24,9 +24,9 @@ router.put(
     userController.updateUserHandler
 );
 
-// router.delete(
-//     '/:id',
-//     userController.deleteUserHandler
-// );
+router.delete(
+    '/:id',
+    userController.deleteUserHandler
+);
 
 export default router;

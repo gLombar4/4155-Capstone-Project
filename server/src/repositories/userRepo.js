@@ -41,7 +41,7 @@ export async function createUser(user) {
 export async function updateUser(id, user) { 
     try {
         const updatedUser = await supabase
-            .from("users")
+            .from("Users")
             .update({
                 "user_name": user.user_name,
                 "user_password": user.user_password
@@ -55,5 +55,12 @@ export async function updateUser(id, user) {
 };
 
 export async function deleteUser(id) {
-    
+    const { data, error } = await supabase
+        .from("Users")
+        .delete()
+        .eq("user_id", id)
+        .select();
+
+    if (error) throw error;
+    return data;
 };
