@@ -7,3 +7,25 @@ export async function getAllUsers(){
     // console.log(error);
     return data;
 }
+
+export async function getUserById(id) {
+    const { data, error } = await supabase
+        .from("Users")
+        .select()
+        .eq('user_id', id)
+    if (error) console.log(error);
+    return data
+    
+};
+
+export async function createUser(user) {
+    
+};
+
+export async function updateUser(id) { 
+
+};
+
+export async function deleteUser(id) {
+    
+};

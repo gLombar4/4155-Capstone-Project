@@ -8,3 +8,12 @@ export async function getAllUsersHandler(req, res){
         res.status(error.status || 500).json({"error": "Uh Oh"});
     }
 }
+
+export async function getUserByIdHandler(req, res) {
+    try {
+        const user = await userServices.getUserById(req.params.id);
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(error.status || 500).json({ "error": "Uh Oh" });
+    }
+}

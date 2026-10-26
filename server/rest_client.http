@@ -8,7 +8,11 @@ GET {{BASE_URL}}
 GET {{BASE_URL}}/users
 ###
 
+GET {{BASE_URL}}/users/1
+
 GET {{BASE_URL}}/reviews
 ###
+
+
 
 
