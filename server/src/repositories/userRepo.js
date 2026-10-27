@@ -21,13 +21,14 @@ export async function getUserById(id) {
 export async function getUserByName(name){
     const {data, error} = await supabase
         .from("Users")
-        .select("user_name")
+        .select()
         .eq('user_name', name)
     if (error) throw error;
     return data;
 }
 
 export async function createUser(user) {
+    console.log(user.user_name)
     const newUser = await supabase
         .from("Users")
         .insert({
