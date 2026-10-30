@@ -11,4 +11,34 @@ GET {{BASE_URL}}/users
 GET {{BASE_URL}}/reviews
 ###
 
+GET {{BASE_URL}}/reviews/game/350392
+###
 
+GET {{BASE_URL}}/reviews/user/1
+###
+
+GET {{BASE_URL}}/reviews/350392/1
+###
+
+POST {{BASE_URL}}/reviews
+Content-Type: application/json
+
+{
+    "game_id": 350392,
+    "user_id": 13,
+    "stars": 4,
+    "written_review": "Great game"
+}
+###
+
+PUT {{BASE_URL}}/reviews/350392/1
+Content-Type: application/json
+
+{
+    "stars": 5,
+    "written_review": "Even better on a second playthrough"
+}
+###
+
+DELETE {{BASE_URL}}/reviews/350392/13
+###
