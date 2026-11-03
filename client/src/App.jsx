@@ -5,6 +5,8 @@ import { CiLogin, CiStar } from "react-icons/ci";
 import { FaUserPlus } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import './App.css'
+import Header from "./components/header";
+import Footer from "./components/footer";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Browser from './Browser.jsx'
 import { GamePage } from './components/GamePage.jsx';
@@ -13,6 +15,7 @@ function Home() {
   const logoColor = "#79d8d4";
   return (
     <>
+    <Header />
       <section id="center">
         <div className="hero">
           <img src={logo} className="base" width="170" height="179" alt="" />
@@ -71,6 +74,7 @@ function Home() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+      <Footer />
     </>
   )
 }
