@@ -8,7 +8,51 @@ GET {{BASE_URL}}
 GET {{BASE_URL}}/users
 ###
 
+GET {{BASE_URL}}/users/4
+###
+POST {{BASE_URL}}/users
+Content-Type: application/json
+
+{
+    "user_name": "Test Creation 2",
+    "user_password": "test123",
+    "role": "user"
+}
+###
+
+PUT {{BASE_URL}}/users/9
+Content-Type: application/json
+
+{
+    "user_name": "Update Test",
+    "user_password": "update test pw"
+}
+###
+
+DELETE {{BASE_URL}}/users/21
+###
+
+POST {{BASE_URL}}/auth/signup
+Content-Type: application/json
+
+{
+    "user_name": "Signup Test",
+    "user_password": "Signup pw"
+}
+###
+
+POST {{BASE_URL}}/auth/login
+Content-Type: application/json
+
+{
+    "user_name": "Signup Test",
+    "user_password": "Signup pww"
+}
+###
+
 GET {{BASE_URL}}/reviews
 ###
+
+
 
 
