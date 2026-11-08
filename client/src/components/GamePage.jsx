@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from "react-router-dom"
 import fallbackCover from '../assets/ncf.png'
-import BasicRating from './Rating';
+import Reviews from './Reviews';
 import './GamePage.css';
 
 export const GamePage = () => {
@@ -60,7 +60,7 @@ export const GamePage = () => {
             width="200"
         />
         <h2>{game.summary || "No summary available."}</h2>
-        <BasicRating></BasicRating>
+        <Reviews gameId={game_id} />
         </main>
     )
 
