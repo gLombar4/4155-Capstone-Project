@@ -11,6 +11,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Browser from './Browser.jsx'
 import { GamePage } from './components/GamePage.jsx';
 
+import Profile from './pages/Profile.jsx';
+
 function Home() {
   const logoColor = "#79d8d4";
   return (
@@ -67,6 +69,8 @@ function Home() {
                 <CiLogin />
                 Login
               </a>
+              {/* Link to profile page */}
+              <Link to="/profile/:username">My Profile</Link>
             </li>
           </ul>
         </div>
@@ -86,6 +90,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Browser" element={<Browser />} />
         <Route path="/GamePage/:game_id" element={<GamePage/>}/>
+        <Route path="/profile/:username" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   )
