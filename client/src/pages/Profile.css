@@ -1,0 +1,15 @@
+/* Profile page styles */
+.profile { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+
+.profile-header { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2rem; }
+
+.profile-avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: #444; color: #fff; font-size: 2.5rem;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.review-card { border: 1px solid #555; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+.review-card-top { display: flex; justify-content: space-between; align-items: baseline; }
