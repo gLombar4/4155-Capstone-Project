@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import ProfileHeader from "../components/ProfileHeader";
-import ReviewCard from "../components/ReviewCard";
+import ProfileHeader from "../pages/ProfileHeader";
+import ReviewCard from "../pages/ReviewCard";
 import "./Profile.css";
 
 const testProfile = {
