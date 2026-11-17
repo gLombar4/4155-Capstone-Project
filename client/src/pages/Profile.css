@@ -2,14 +2,20 @@
 .profile { width: 100%; padding: 2rem; text-align: left; }
 
 .profile-header { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2rem; }
+.profile-header h1 { margin: 0 0 var(--space-2); }
 
 .profile-avatar {
-  width: 96px; height: 96px; border-radius: 50%;
-  background: #444; color: #fff; font-size: 2.5rem;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden; flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #444;
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
-.profile-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .profile-review-list {
   display: flex;

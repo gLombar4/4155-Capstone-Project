@@ -5,8 +5,6 @@ import "./Profile.css";
 
 const testProfile = {
   username: "testuser",
-  bio: "This is a test profile",
-  avatar_url: "",
   review_count: 2,
 }
 
