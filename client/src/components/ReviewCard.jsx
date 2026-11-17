@@ -2,18 +2,22 @@ import Rating from '@mui/material/Rating';
 import { Link } from 'react-router-dom';
 
 export default function ReviewCard({ review, onEdit, onDelete }) {
+    // Reviewer link
+    let reviewAuthor;
+    if (review.user_name) {
+        reviewAuthor = (
+            <Link to={`/profile/${encodeURIComponent(review.user_name)}`}>
+                {review.user_name}
+            </Link>
+        );
+    } else {
+        reviewAuthor = `User ${review.user_id}`;
+    }
+
     return (
         <li className="review-card">
             <div className="review-card-head">
-                <span className="review-author">
-                    {review.user_name ? (
-                        <Link to={`/profile/${encodeURIComponent(review.user_name)}`}>
-                            {review.user_name}
-                        </Link>
-                    ) : (
-                        `User ${review.user_id}`
-                    )}
-                </span>
+                <span className="review-author">{reviewAuthor}</span>
                 <Rating
                     className="rating-stars"
                     value={review.stars}
