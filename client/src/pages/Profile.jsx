@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import ProfileHeader from "../pages/ProfileHeader";
-import ReviewCard from "../pages/ReviewCard";
+import ProfileHeader from "../components/ProfileHeader";
+import ProfileReviewCard from "../components/ProfileReviewCard";
 import "./Profile.css";
 
 const testProfile = {
@@ -40,16 +40,18 @@ export default function Profile() {
   return (
     <main className="profile">
       <ProfileHeader profile={{ ...testProfile, username }} />
-          <section className = "profile-reviews">
+          <section className="profile-reviews">
             <h2>Reviews</h2>
-            {testReviews.map((review) => (
-              <ReviewCard
-                key={review.id}
-                review={review.review}
-                game={review.game}
-                cover={review.cover}
-              />
-            ))}
+            <ul className="profile-review-list">
+              {testReviews.map((review) => (
+                <ProfileReviewCard
+                  key={review.id}
+                  review={review.review}
+                  game={review.game}
+                  cover={review.cover}
+                />
+              ))}
+            </ul>
           </section>
     </main>
     

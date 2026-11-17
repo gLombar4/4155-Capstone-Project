@@ -11,10 +11,62 @@
 }
 .profile-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-.review-card { display: flex; gap: 1rem; border: 1px solid #555; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
-.review-card-cover { width: 96px; height: 128px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
-.review-card-content { flex: 1; min-width: 0; text-align: left; }
-.review-card-top { display: flex; justify-content: space-between; align-items: baseline; }
+.profile-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-review-card {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.profile-review-card .review-card-cover {
+  width: 96px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.profile-review-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  text-align: left;
+}
+
+.profile-review-card .review-card-head,
+.profile-review-card .review-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.profile-review-card .review-author {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+.profile-review-card .review-text {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.profile-review-card .review-date {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
 
 @media (max-width: 600px) {
   .profile { padding: 1rem; }
