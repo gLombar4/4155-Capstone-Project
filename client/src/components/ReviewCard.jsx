@@ -17,7 +17,9 @@ export default function ReviewCard({ review, onEdit, onDelete }) {
     return (
         <li className="review-card">
             <div className="review-card-head">
-                <span className="review-author">{reviewAuthor}</span>
+                <span className="review-author">
+                    {reviewAuthor}
+                </span>
                 <Rating
                     className="rating-stars"
                     value={review.stars}
