@@ -28,15 +28,18 @@ export async function getUserByName(name){
 }
 
 export async function createUser(user) {
-    console.log(user.user_name)
-    const newUser = await supabase
+    const { data, error } = await supabase
         .from("Users")
         .insert({
             "user_name": user.user_name,
             "user_password": user.user_password,
             "role": user.role
-        });
-    return newUser;
+        })
+        .select()
+        .single();
+
+    if (error) throw error;
+    return data;
 };
 
 export async function updateUser(id, user) { 

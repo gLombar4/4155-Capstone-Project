@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import logo from './assets/logo.png'
 import { IoLogoGameControllerA } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
@@ -14,9 +15,21 @@ import { GamePage } from './components/GamePage.jsx';
 import Profile from './pages/Profile.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
+import { AUTH_SESSION_CHANGED, getAuthenticatedUsername } from "./authSession";
 
 function Home() {
   const logoColor = "#79d8d4";
+  const [username, setUsername] = useState(getAuthenticatedUsername);
+
+  useEffect(() => {
+    const updateUsername = () => setUsername(getAuthenticatedUsername());
+    window.addEventListener(AUTH_SESSION_CHANGED, updateUsername);
+
+    return () => {
+      window.removeEventListener(AUTH_SESSION_CHANGED, updateUsername);
+    };
+  }, []);
+
   return (
     <>
     <Header />
@@ -55,23 +68,29 @@ function Home() {
         </div>
         <div id="social">
           <CgProfile color={logoColor} size={40}/>
-          <h2>Get Started</h2>
-          <p>Create or login to an account </p>
+          <h2>{username ? `Welcome, ${username}` : "Get Started"}</h2>
+          <p>{username ? "View your Gameboxd profile." : "Create or login to an account"}</p>
           <ul>
-            <li>
-              <Link to="/signup">
-                <FaUserPlus />
-                Sign Up
-              </Link>
-            </li>
-            <li>
-              <Link to="/login">
-                <CiLogin />
-                Login
-              </Link>
-              {/* Link to profile page */}
-              <Link to="/profile/:username">My Profile</Link>
-            </li>
+            {username ? (
+              <li>
+                <Link to={`/profile/${encodeURIComponent(username)}`}>My Profile</Link>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <Link to="/signup">
+                    <FaUserPlus />
+                    Sign Up
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/login">
+                    <CiLogin />
+                    Login
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </section>

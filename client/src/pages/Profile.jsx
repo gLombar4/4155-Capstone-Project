@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom"
+import Header from "../components/header";
+import Footer from "../components/footer";
 import ProfileHeader from "../components/ProfileHeader";
 import ProfileReviewCard from "../components/ProfileReviewCard";
 import "./Profile.css";
@@ -36,8 +38,10 @@ export default function Profile() {
   const { username } = useParams();
   
   return (
-    <main className="profile">
-      <ProfileHeader profile={{ ...testProfile, username }} />
+    <>
+      <Header />
+      <main className="profile">
+        <ProfileHeader profile={{ ...testProfile, username }} />
           <section className="profile-reviews">
             <h2>Reviews</h2>
             <ul className="profile-review-list">
@@ -51,7 +55,8 @@ export default function Profile() {
               ))}
             </ul>
           </section>
-    </main>
-    
+      </main>
+      <Footer />
+    </>
   );
 }

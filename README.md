@@ -34,7 +34,13 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Setup
 
-### 1. Frontend
+### 1. Root
+```bash
+cp .env.example .env   # fill in real values
+```
+> `.env` is gitignored and never comes from git.
+
+### 2. Frontend
 ```bash
 cd client
 npm install
@@ -42,13 +48,11 @@ npm run dev
 ```
 → `http://localhost:5173`
 
-### 2. Backend
+### 3. Backend
 ```bash
 cd server
 npm install
-cp .env.example .env   # fill in real values
 npm run dev
 ```
 → `http://localhost:3000`
 
-> `.env` is gitignored and never comes from git. `npm install` alone won't set it up.

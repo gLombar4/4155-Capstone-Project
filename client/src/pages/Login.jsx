@@ -45,6 +45,7 @@ export default function Login() {
       }
 
       localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("user_name", username);
       navigate("/");
     } catch {
       setError("Could not connect to the server. Please try again.");
