@@ -12,6 +12,8 @@ import Browser from './Browser.jsx'
 import { GamePage } from './components/GamePage.jsx';
 
 import Profile from './pages/Profile.jsx';
+import Login from './pages/Login.jsx';
+import SignUp from './pages/SignUp.jsx';
 
 function Home() {
   const logoColor = "#79d8d4";
@@ -57,18 +59,16 @@ function Home() {
           <p>Create or login to an account </p>
           <ul>
             <li>
-              {/* TODO: Link the sign up button to account creation */}
-              <a href="" target="_blank">
+              <Link to="/signup">
                 <FaUserPlus />
                 Sign Up
-              </a>
+              </Link>
             </li>
             <li>
-              {/* TODO: Link the login button to login functionality */}
-              <a href="" target="_blank">
+              <Link to="/login">
                 <CiLogin />
                 Login
-              </a>
+              </Link>
               {/* Link to profile page */}
               <Link to="/profile/:username">My Profile</Link>
             </li>
@@ -91,6 +91,8 @@ function App() {
         <Route path="/Browser" element={<Browser />} />
         <Route path="/GamePage/:game_id" element={<GamePage/>}/>
         <Route path="/profile/:username" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   )

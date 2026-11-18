@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
+
 function Header() {
     return (
         <header className="site-header">
             <h1>Gameboxd</h1>
 
             <nav>
-                <a href="/">Home</a>
-                <a href="/browser">Browser</a>
-                <a href="#">Login</a>
-                <a href="#">Sign Up</a>
+                <Link to="/">Home</Link>
+                <Link to="/Browser">Browser</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/signup">Sign Up</Link>
             </nav>
         </header>
     );
