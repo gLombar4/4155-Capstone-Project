@@ -1,6 +1,6 @@
 import express from 'express';
 import * as reviewController from '../controllers/reviewController.js';
-
+import { authenticateUser, authorizeReviewOwner } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
@@ -24,14 +24,20 @@ router.get("/:gameId/:userId",
 
 router.post(
     "/", 
+    authenticateUser,
+    authorizeReviewOwner,
     reviewController.createReviewHandler
 );
 
 router.put("/:gameId/:userId", 
+    authenticteUser,
+    authorizeReviewOwner,
     reviewController.updateReviewHandler
 );
 
 router.delete("/:gameId/:userId", 
+    authenticateUser,
+    authorizeReviewOwner,
     reviewController.deleteReviewHandler
 );
 
