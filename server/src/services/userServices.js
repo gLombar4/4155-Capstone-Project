@@ -14,6 +14,16 @@ export async function getUserById(id) {
   return user;
 }
 
+export async function getPublicUserByName(name) {
+  const user = await userRepo.getPublicUserByName(name);
+  if (!user) {
+    const err = new Error(`Cannot find user with name: ${name}`);
+    err.status = 404;
+    throw err;
+  }
+  return user;
+}
+
 export async function createUser(data) {
   const { user_name, user_password, role } = data ?? {};
   if (!user_name || !user_password) {
