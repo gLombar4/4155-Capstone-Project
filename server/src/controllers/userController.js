@@ -18,6 +18,15 @@ export async function getUserByIdHandler(req, res) {
   }
 }
 
+export async function getPublicUserByNameHandler(req, res) {
+  try {
+    const user = await userServices.getPublicUserByName(req.params.username);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(error.status || 500).json({ error: error.message });
+  }
+}
+
 export async function createUserHandler(req, res) {
   try {
     const newUser = await userServices.createUser(req.body);
