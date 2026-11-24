@@ -1,0 +1,121 @@
+.auth-page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-7) var(--space-4);
+}
+
+.auth-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--color-text-strong);
+  font-size: var(--h2);
+  font-weight: 600;
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    color var(--transition);
+}
+
+.auth-brand:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.auth-brand:focus-visible {
+  border-color: var(--color-accent);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.auth-brand img {
+  display: block;
+  width: 104px;
+  height: auto;
+}
+
+.auth-card {
+  width: min(100%, 420px);
+  padding: var(--space-6);
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.auth-card h1 {
+  margin: 0 0 var(--space-2);
+  text-align: center;
+  font-size: var(--h2);
+}
+
+.auth-description {
+  margin-bottom: var(--space-5);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.auth-form label {
+  margin-top: var(--space-2);
+  color: var(--color-text-strong);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+}
+
+.auth-form button {
+  width: 100%;
+  margin-top: var(--space-3);
+}
+
+.auth-switch {
+  margin-top: var(--space-5);
+  text-align: center;
+  font-size: var(--text-sm);
+}
+
+.auth-notice,
+.auth-error {
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+}
+
+.auth-notice {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.auth-error {
+  color: #ffb4ab;
+  background: rgba(255, 100, 100, 0.1);
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: var(--space-6) var(--space-3);
+  }
+
+  .auth-card {
+    padding: var(--space-5);
+  }
+}

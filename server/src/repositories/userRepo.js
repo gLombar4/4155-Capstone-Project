@@ -27,16 +27,29 @@ export async function getUserByName(name){
     return data;
 }
 
+export async function getPublicUserByName(name) {
+    const { data, error } = await supabase
+        .from("Users")
+        .select("user_id,user_name")
+        .eq("user_name", name)
+        .maybeSingle();
+    if (error) throw error;
+    return data;
+}
+
 export async function createUser(user) {
-    console.log(user.user_name)
-    const newUser = await supabase
+    const { data, error } = await supabase
         .from("Users")
         .insert({
             "user_name": user.user_name,
             "user_password": user.user_password,
             "role": user.role
-        });
-    return newUser;
+        })
+        .select()
+        .single();
+
+    if (error) throw error;
+    return data;
 };
 
 export async function updateUser(id, user) { 

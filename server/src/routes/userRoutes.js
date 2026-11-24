@@ -10,6 +10,11 @@ router.get(
 );
 
 router.get(
+    '/username/:username',
+    userController.getPublicUserByNameHandler,
+);
+
+router.get(
     '/:id',
     userController.getUserByIdHandler
 );
