@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import logo from './assets/logo.png'
 import { IoLogoGameControllerA } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
-import { CiLogin, CiStar } from "react-icons/ci";
+import { CiLogin } from "react-icons/ci";
 import { FaUserPlus } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import './App.css'
@@ -57,12 +57,6 @@ function Home() {
                 Search for games
                 </Link>
                 
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <CiStar />
-                View trending titles
-              </a>
             </li>
           </ul>
         </div>

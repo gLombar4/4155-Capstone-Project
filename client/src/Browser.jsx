@@ -4,6 +4,8 @@ import "./Browser.css"
 import fallbackCover from './assets/ncf.png'
 import Searchbar from './components/Searchbar.jsx'
 import {Link} from "react-router-dom"
+import Header from "./components/header";
+import Footer from "./components/footer";
 const PAGE_SIZE = 20;
 
 function Browser() {
@@ -104,6 +106,8 @@ function Browser() {
 
 
     return (
+      <>
+      <Header/>
         <div className="browser">
             <div className="browser-header">
 
@@ -140,6 +144,8 @@ function Browser() {
                 </button>
             </section>
         </div>
+        <Footer/>
+        </>
     )
 }
 

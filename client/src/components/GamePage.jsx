@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from "react-router-dom"
 import fallbackCover from '../assets/ncf.png'
 import Reviews from './Reviews';
+import Header from "./header";
+import Footer from "./footer";
 import './GamePage.css';
 
 export const GamePage = () => {
@@ -46,6 +48,8 @@ export const GamePage = () => {
     }
 
     return(
+        <>
+        <Header/>
         <main className="game-page">
         <Link to="/Browser">Back to games </Link>
         <h1>{game.name}</h1>
@@ -62,6 +66,8 @@ export const GamePage = () => {
         <h2>{game.summary || "No summary available."}</h2>
         <Reviews gameId={game_id} />
         </main>
+        <Footer/>
+        </>
     )
 
 }
