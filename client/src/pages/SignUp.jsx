@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../api";
 import logo from "../assets/logo.png";
 import Footer from "../components/footer";
+import Header from "../components/header";
 import "./Auth.css";
 
 export default function SignUp() {
@@ -48,6 +49,7 @@ export default function SignUp() {
 
   return (
     <>
+    <Header/>
       <main className="auth-page">
         <Link className="auth-brand" to="/" aria-label="Gameboxd home">
           <img src={logo} alt="" />
